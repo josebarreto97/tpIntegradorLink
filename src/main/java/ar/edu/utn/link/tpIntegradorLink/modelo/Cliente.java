@@ -16,4 +16,8 @@ public class Cliente {
 	private String mail;
 	private Collection<OrdenCompra> comprasEfectuadas;
 	
+	//metodos
+	private void hacerCompra(OrdenCompra ordenCompra) {
+		comprasEfectuadas.add(ordenCompra);
+	}
 }
