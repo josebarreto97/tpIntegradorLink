@@ -7,7 +7,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Getter @Setter
-public class Cliente {
+public class Cliente extends Usuario{
 	private String apellido;
 	private String nombre;
 	private LocalDate fechaNacimiento;
@@ -16,7 +16,7 @@ public class Cliente {
 	private String mail;
 	private Collection<OrdenCompra> comprasEfectuadas;
 	
-	//metodos
+	//
 	private void hacerCompra(OrdenCompra ordenCompra) {
 		comprasEfectuadas.add(ordenCompra);
 	}

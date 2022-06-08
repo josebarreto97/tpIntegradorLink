@@ -1,6 +1,6 @@
 package ar.edu.utn.link.tpIntegradorLink.modelo;
 
-public enum Rol {
+public enum TipoUsuario {
 	CLIENTE,
 	VENDEDOR,
 	ADMINISTRADOR
