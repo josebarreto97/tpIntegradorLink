@@ -8,6 +8,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 import org.springframework.stereotype.Component;
 
+import ar.edu.utn.link.tpIntegradorLink.modelo.Carrito;
 import ar.edu.utn.link.tpIntegradorLink.modelo.Cupon;
 import ar.edu.utn.link.tpIntegradorLink.modelo.Membresia;
 import ar.edu.utn.link.tpIntegradorLink.modelo.OrdenCompra;
@@ -59,10 +60,14 @@ public class InitData implements CommandLineRunner {
 
 		Proveedor unProveedor = new Proveedor("Hasbro");
 		Proveedor otroProveedor = new Proveedor("ToyCo");
+		Carrito carritoNick = new Carrito();
+		Carrito carritoPato = new Carrito();
 		Usuario nickBenve = new Usuario("nickBenve", "1234", "Nicolas", "Benvenaste", 12345678, true, TipoUsuario.CLIENTE);
+		nickBenve.setCarrito(carritoNick);
 		Usuario pato = new Usuario("pato", "1234", "Patricio", "Galli", 12345678, false, TipoUsuario.VENDEDOR);
-		Producto producto1 = new Producto("Monopoly Simpsons", "Juego de Mesa divertido", 1.0, otroProveedor, "https://th.bing.com/th/id/R.1f5e065568fadec8772afc7f5c758ac5?rik=HtwSkwwCezoG0w&riu=http%3a%2f%2fwww.ovmpaper.ro%2fuserfiles%2fb9ac6e60-07a4-4e60-bbf9-a9c87fc63dfa%2fproducts%2f4339136_big.jpg&ehk=T8POFiBIMoCyJYc28yI6TdkIpdQ3iYwShILJozWbkrA%3d&risl=&pid=ImgRaw&r=0" );
-		Producto producto2 = new Producto("UNO", "Juego de Cartas destruye amistades", 1.0, unProveedor, "https://www.drogariaminasbrasil.com.br/media/product/d70/chocolate-em-barra-arcor-ao-leite-100g-dd2.jpg");
+		pato.setCarrito(carritoPato);
+		Producto producto1 = new Producto("Monopoly Simpsons", "Juego de Mesa divertido", 1.0, otroProveedor, "https://m.media-amazon.com/images/I/81pEDX5vZwL._AC_SX425_.jpg" );
+		Producto producto2 = new Producto("UNO", "Juego de Cartas destruye amistades", 1.0, unProveedor, "https://m.media-amazon.com/images/I/91tzxYYp-eL._AC_SX355_.jpg");
 		
 		if(repoProveedores.count() == 0) {
 			

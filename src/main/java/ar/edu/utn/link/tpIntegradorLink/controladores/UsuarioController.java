@@ -26,6 +26,6 @@ public class UsuarioController {
 		
 		repoUsuarios.save(usuario);
 		
-		return "ok";	
+		return "Usuario creado";	
 	}
 }

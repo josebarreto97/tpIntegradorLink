@@ -5,6 +5,9 @@ import lombok.Setter;
 
 @Getter @Setter
 public abstract class ConvertidorDolar {
+	String fecha;
+	String compra;
+	String venta;
 	String url;
 	
 	//Constructores

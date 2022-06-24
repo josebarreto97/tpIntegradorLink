@@ -44,11 +44,11 @@ public class Promocion {
 	
 	//
 	public double descuento(OrdenCompra orden) {
-		if(this.esValidoPara(orden)) {		
-			double totalADescontar = this.totalADescontar(orden);
-			return totalADescontar*(porcentaje/100);
+		if(!this.esValidoPara(orden)) {		
+			return 0;
 		}
-		return 0;
+		double totalADescontar = this.totalADescontar(orden);
+		return totalADescontar*(porcentaje/100);
 	}
 
 	public Double totalADescontar(OrdenCompra orden) {

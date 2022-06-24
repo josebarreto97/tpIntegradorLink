@@ -7,6 +7,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.client.RestTemplate;
+
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -49,6 +53,17 @@ public class Producto {
 		this.habilitado = true;
 		//Lo hare desde el front con Angular
 		//this.convertidor = new ApiConvertidor("http://api-dolar-argentina.herokuapp.com/api/dolaroficial");
+	}
+	
+	//LOGICA IMPLEMENTADA PARA CONSUMIR API DOLAR... Iba a utilizarla en el Frontend
+	@Value("${tp.apiPrecioDolar}")
+	String apiPrecioDolar; // uri
+	
+	private Float precioDolarActual() {
+		RestTemplate restTemplate = new RestTemplate();
+		String uri = "http://api-dolar-argentina.herokuapp.com/api/dolaroficial/";
+		ConvertidorDolar result = restTemplate.getForObject(uri, ConvertidorDolar.class);
+		return Float.parseFloat(result.getCompra());
 	}
 	
 	public double getPrecioPesos() {

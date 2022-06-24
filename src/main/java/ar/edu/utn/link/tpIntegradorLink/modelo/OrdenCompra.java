@@ -95,7 +95,7 @@ public class OrdenCompra {
 
 	public double totalADescontar() throws Exception {
 		if(this.medioPago == null) {
-			throw new NoHayMedioPagoException("Se debe agregar un medio de pago a la orden de compra");
+			throw new NoHayMedioPagoException("Se debe elegir medio de pago");
 		}
 		return promociones.stream().mapToDouble(promocion -> promocion.descuento(this)).sum();
 	}

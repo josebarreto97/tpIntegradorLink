@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 @Entity
 @DiscriminatorValue("MEMBRESIA")
 public class Membresia extends Promocion{
+	
 	//Constructores
 	public Membresia() {
 		super();

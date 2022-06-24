@@ -12,6 +12,10 @@ import javax.persistence.OneToOne;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter @Setter
 @Entity
 public class Usuario {
 	
@@ -21,7 +25,7 @@ public class Usuario {
 	@Column
 	private String user;
 	
-	@JsonIgnore
+	@JsonIgnore //Para que no salga la contrasenia en el json
 	private String password;
 	
 	@Column
@@ -46,10 +50,7 @@ public class Usuario {
 	public Usuario() {
 		super();
 	}
-
-
 	
-
 	public Usuario(String user, String password, String nombre, String apellido, int numDoc,
 			boolean tieneMembresia, TipoUsuario tipo) {
 		super();
@@ -63,119 +64,12 @@ public class Usuario {
 		this.tipo = tipo;
 	}
 
-
-
-
-	public String getUser() {
-		return user;
-	}
-
-
-	public void setUser(String user) {
-		this.user = user;
-	}
-
-
-	public String getPassword() {
-		return password;
-	}
-
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-
-	public TipoUsuario getTipo() {
-		return tipo;
-	}
-
-
-	public void setTipo(TipoUsuario tipo) {
-		this.tipo = tipo;
-	}
-
-
-	public String getNombre() {
-		return nombre;
-	}
-
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
-
-	public String getApellido() {
-		return apellido;
-	}
-
-
-	public void setApellido(String apellido) {
-		this.apellido = apellido;
-	}
-
-
-	public int getNumDoc() {
-		return numDoc;
-	}
-
-
-	public void setNumDoc(int numDoc) {
-		this.numDoc = numDoc;
-	}
-
-
-	public Carrito getCarrito() {
-		return carrito;
-	}
-
-
-	public void setCarrito(Carrito carrito) {
-		this.carrito = carrito;
-	}
-
-
-	public boolean isTieneMembresia() {
-		return tieneMembresia;
-	}
-
-
-	public void setTieneMembresia(boolean tieneMembresia) {
-		this.tieneMembresia = tieneMembresia;
-	}
-
-
-
-
-	public Integer getId() {
-		return id;
-	}
-
-
-
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
-
-
-
 	public void pagar(double total, MedioPago medioPago) {
 		// TODO Auto-generated method stub
-		
 	}
-
-
-
 
 	public void agregarOrdenCompra(OrdenCompra ordenDeCompra) {
 		// TODO Auto-generated method stub
-		
 	}
-	
-	
-	
-	
+
 }
