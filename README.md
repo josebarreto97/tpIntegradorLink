@@ -11,11 +11,13 @@ Trabajo Práctico Integrador realizado para la capacitación de Inicia IT 2022.
 
 ---
 
-## Diagrama de Clases, DER:
+## Diagrama de Clases y DER:
 
 [Link al drive](https://drive.google.com/drive/folders/1R1VuqNwkPlsZ2rMYmb6_YX9kuKIRUR7P?usp=sharing)
 
-##Pantallas HTML-CSS (Mockup):
+---
+
+## Pantallas HTML-CSS (Mockup):
 
 [Link al repositorio](https://github.com/josebarreto97/tpLink-HTML)
 
