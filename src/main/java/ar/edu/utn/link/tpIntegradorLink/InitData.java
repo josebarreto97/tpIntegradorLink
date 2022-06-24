@@ -87,13 +87,10 @@ public class InitData implements CommandLineRunner {
 		}
 		
 		if(repoPromociones.count() == 0) {
-			Cupon cupon = new Cupon("Cupon 10% coca-cola", 10.0, true, "1234", otroProveedor, producto1);
+			Cupon cupon = new Cupon("Cupon 5% Juego Mesa", 5.0, true, "1234", otroProveedor, producto1);
 			repoPromociones.save((Promocion) cupon);
 		}
 		
-		
-		
-
 	}
 
 }

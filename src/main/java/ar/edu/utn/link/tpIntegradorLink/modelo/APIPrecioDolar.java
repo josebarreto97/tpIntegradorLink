@@ -1,5 +1,6 @@
 package ar.edu.utn.link.tpIntegradorLink.modelo;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.client.RestTemplate;
 
 public class APIPrecioDolar extends ConvertidorDolar{
@@ -37,5 +38,16 @@ public class APIPrecioDolar extends ConvertidorDolar{
 		//System.out.println("Venta: " + String.valueOf(cotizacion.getVenta()));
 
 		return cotizacion;
+	}
+	
+	//LOGICA IMPLEMENTADA PARA CONSUMIR API DOLAR... Iba a utilizarla en el Frontend
+	@Value("${tp.apiPrecioDolar}")
+	String apiPrecioDolar; // uri
+		
+	private Float precioDolarActual() {
+		RestTemplate restTemplate = new RestTemplate();
+		String uri = "http://api-dolar-argentina.herokuapp.com/api/dolaroficial/";
+		ConvertidorDolar result = restTemplate.getForObject(uri, ConvertidorDolar.class);
+		return Float.parseFloat(result.getCompra());
 	}
 }
